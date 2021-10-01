@@ -1,2 +1,3 @@
 BasedOnStyle: LLVM
-IndentWith: 4
+IndentWidth: 4
+TabWidth: 4
