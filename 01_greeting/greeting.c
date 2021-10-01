@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-int main()
-{
-    printf("Hello, Dan!\n");
+int main(int argc, char *argv[]) {
+  if (argc < 2)
+    puts("Hello there");
+  else
+    printf("Hello %s\n", argv[1]);
 
-    return(0);
+  return (0);
 }
