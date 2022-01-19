@@ -4,7 +4,7 @@ CFLAGS = `cat compile_flags.txt`
 run: compile
 	./greeting
 
-compile: clean
+compile:
 	$(CC) $(CFLAGS) -o greeting greeting.c
 
 clean:
