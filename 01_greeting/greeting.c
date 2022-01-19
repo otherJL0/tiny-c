@@ -16,7 +16,7 @@ char WEEKDAY[7][10] = {
 };
 
 void printTimeDetails(bool dayOfYear, bool dayOfWeek, bool year, bool month,
-                       bool dayOfMonth, bool hour, bool minute, bool second) {
+                      bool dayOfMonth, bool hour, bool minute, bool second) {
     time_t now;
     time(&now);
     struct tm *clock = localtime(&now);
