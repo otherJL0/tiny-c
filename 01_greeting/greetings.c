@@ -21,7 +21,10 @@ int main(int argc, char *argv[]) {
   } else {
     modifier = "evening";
   }
-  printf("%d, %d %d", clock->tm_wday, clock->tm_mon + 1, clock->tm_mday);
-  printf("Good %s, %s! The time is now %s\n", modifier, name, ctime(&now));
+  char formatted_time[64];
+  strftime(formatted_time, 64, "Today is %A, %B %d, %Y%nIt is %r%n", clock);
+
+  printf("Good %s, %s!\n%s", modifier, name, formatted_time);
+
   return EXIT_SUCCESS;
 }
