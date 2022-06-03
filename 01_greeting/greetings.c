@@ -5,12 +5,11 @@
 #define PROJECT_NAME "greetings"
 
 int main(int argc, char *argv[]) {
-  const char *name = (argc < 2) ? getenv("USER") : argv[1];
+  const char *name = (argc > 1) ? argv[1] : getenv("USER");
 
   // Determine time of day to format greeting modifier
   time_t now;
   time(&now);
-
   struct tm *clock = localtime(&now);
 
   char *modifier;
@@ -21,6 +20,7 @@ int main(int argc, char *argv[]) {
   } else {
     modifier = "evening";
   }
+
   char formatted_time[64];
   strftime(formatted_time, 64, "Today is %A, %B %d, %Y%nIt is %r%n", clock);
 
