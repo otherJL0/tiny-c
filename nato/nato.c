@@ -11,6 +11,20 @@ const char *nato[] = {
     "Oscar",  "Papa",    "Quebec",   "Romeo",  "Sierra", "Tango",   "Uniform",
     "Victor", "Whiskey", "Xray",     "Yankee", "Zulu"};
 
+void phraseToNato(char *phrase, int phrase_length) {
+  char ch;
+  for (int i = 0; i < phrase_length; i++) {
+    if (!phrase[i]) {
+      break;
+    }
+    ch = toupper(phrase[i]);
+    if (isalpha(ch)) {
+      printf("%s ", nato[ch - 'A']);
+    }
+  }
+  putchar('\n');
+}
+
 int main(int argc, char *argv[]) {
 
   char phrase[64];
@@ -22,18 +36,7 @@ int main(int argc, char *argv[]) {
       strcat(phrase, argv[i]);
     }
   }
-
-  char ch;
-  for (int i = 0; i < 64; i++) {
-    if (!phrase[i]) {
-      break;
-    }
-    ch = toupper(phrase[i]);
-    if (isalpha(ch)) {
-      printf("%s ", nato[ch - 'A']);
-    }
-  }
-  putchar('\n');
+  phraseToNato(phrase, 64);
 
   return EXIT_SUCCESS;
 }

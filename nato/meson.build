@@ -16,4 +16,4 @@ add_project_arguments('-pedantic',
 exe = executable('nato', 'nato.c',
   install : true)
 
-test('basic', exe)
+test('basic', exe, args: ['hello'])
